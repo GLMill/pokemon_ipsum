@@ -14,6 +14,7 @@ $(document).ready(function(){
         var flag = 0;
 
         while (flag < number_of_paragraphs){
+            output.push('<p>');
             for(var i = 0; i< (words_in_para+1); i++){
                 //adding variables to choose random word.
                 var choice = Math.floor((Math.random() * words.length) + 1);
@@ -28,11 +29,11 @@ $(document).ready(function(){
                     output.push(word);
                 }
             }
-            output.push('</br>');
+            output.push('</p>');
             flag ++;
         }// end of while loop
        var output_string = output.join(' ');
-       $('#text_area').append(output_string);
+       $('#text_area').append("<div>"+output_string+"</div>");
     }
       
       // string is a keyword for a data type, as this uses methods and objects we must specify this.
@@ -43,7 +44,7 @@ $(document).ready(function(){
 
     //---------------- only make ipsom when told
     $('#submit').on('click', function(){
-    $('#text_area > p').remove();
+    $('#text_area > div').remove();
     make_ipsom();
     })
 });
