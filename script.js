@@ -14,7 +14,7 @@ $(document).ready(function(){
         var flag = 0;
 
         while (flag < number_of_paragraphs){
-            output.push('<p>');
+            output.push('<p class="output">');
             for(var i = 0; i< (words_in_para+1); i++){
                 //adding variables to choose random word.
                 var choice = Math.floor((Math.random() * words.length) + 1);

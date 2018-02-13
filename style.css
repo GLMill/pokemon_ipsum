@@ -126,6 +126,10 @@ input{
     font-size:12px;
 }
 
+.output{
+    margin-bottom:10px;
+}
+
 @media screen and(max-width:580px){
 .left-col,.right-col{
     display:block;
