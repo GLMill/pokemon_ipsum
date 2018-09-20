@@ -1,0 +1,14 @@
+{
+  "name": "pokemon_ipsom",
+  "version": "1.0.0",
+  "description": "This is a pokemon Ipsum generator and is my first sass project",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "georgia millard, ge huxley",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.9.3"
+  }
+}

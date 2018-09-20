@@ -3,10 +3,10 @@ $(document).ready(function(){
     function make_ipsom(){
         //----------------------------words
         var words=['pika pika', 'pikachu', 'thunderbolt', 'trainer','battle','abra', ' ash', 'ace trainer', 'pokeball', 'charmander', 'char', 'squirtle', 'bulbasaur', 'i choose you','onyx', 'jessie james', 'meaowth', 'team rocket', 'blasting of again','pokedex',
-        'gameboy colour', 'sycther', 'mew-two', 'mew', 'a wild ', ];
+        'gameboy colour', 'sycther', 'jiggly puff', 'growlith', 'gym battle', 'professor rowan','mew-two', 'mew', 'a wild ', ];
         //------------------------------ turning this into a function
         var number_of_paragraphs = $('#number_of_paragraphs').val();
-        number_of_paragraphs = parseInt(number_of_paragraphs);
+        //number_of_paragraphs = parseInt(number_of_paragraphs);
         //---------------------------------------varaibales
         var words_in_para = 40;
         var output = [];
