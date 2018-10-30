@@ -42,7 +42,4 @@ window.onload = function(){
         //put in text area
        document.getElementById('text_area').innerHTML=(output.join(' '));
     }
-      
-      // string is a keyword for a data type, as this uses methods and objects we must specify this.
-  
 }
