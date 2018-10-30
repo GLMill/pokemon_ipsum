@@ -1,24 +1,31 @@
-$(document).ready(function(){
+window.onload = function(){
    
-    function make_ipsom(){
-        //----------------------------words
-        var words=['pika pika', 'pikachu', 'thunderbolt', 'trainer','battle','abra', ' ash', 'ace trainer', 'pokeball', 'charmander', 'char', 'squirtle', 'bulbasaur', 'i choose you','onyx', 'jessie james', 'meaowth', 'team rocket', 'blasting of again','pokedex',
-        'gameboy colour', 'sycther', 'jiggly puff', 'growlith', 'gym battle', 'professor rowan','mew-two', 'mew', 'a wild ', ];
-        //------------------------------ turning this into a function
-        var number_of_paragraphs = $('#number_of_paragraphs').val();
-        //number_of_paragraphs = parseInt(number_of_paragraphs);
-        //---------------------------------------varaibales
-        var words_in_para = 40;
-        var output = [];
-        //flag for loop
-        var flag = 0;
+    var words=['pika pika', 'pikachu', 'thunderbolt', 'trainer','battle','abra', ' ash', 'ace trainer', 'pokeball', 'charmander', 'char', 'squirtle', 'bulbasaur', 'i choose you','onyx', 'jessie james', 'meaowth', 'team rocket', 'blasting of again','pokedex',
+    'gameboy colour', 'sycther', 'jiggly puff', 'growlith', 'gym battle', 'professor rowan','mew-two', 'mew', 'a wild '];
+    
+    // event listener for submit button 
+    document.getElementById("submit").addEventListener("click", make_ipsum);
+    //----------------------------------------------------- helper functions
+    function clear_text_area(){
+        //clearing old stuff
+        document.getElementById('text_area').innerHTML='';
+    }
 
-        while (flag < number_of_paragraphs){
+    function capitalize(string){
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }   
+       //----------------------------------------------------- main ipsum function
+    function make_ipsum(){
+        clear_text_area();
+        //setting up new variable s
+        var number_of_paragraphs = parseInt(document.getElementById('number_of_paragraphs').value);
+        var words_in_para = 40; // this should be adjustable 
+        var output = [];
+        
+        while (number_of_paragraphs > 0){
             output.push('<p class="output">');
-            for(var i = 0; i< (words_in_para + 1); i++){
-                //adding variables to choose random word.
-                var choice = Math.floor((Math.random() * words.length) + 1);
-                var word = words[choice];
+            for(var i = 0; i <= words_in_para; i++){
+                var word = words[Math.ceil((Math.random() * words.length))];
                 if(i == 0){ // capitalises
                     output.push(capitalize(word));
                 }
@@ -30,21 +37,12 @@ $(document).ready(function(){
                 }
             }
             output.push('</p>');
-            flag ++;
+            number_of_paragraphs--;
         }// end of while loop
-       var output_string = output.join(' ');
-       $('#text_area').append("<div>"+output_string+"</div>");
+        //put in text area
+       document.getElementById('text_area').innerHTML=(output.join(' '));
     }
       
       // string is a keyword for a data type, as this uses methods and objects we must specify this.
-    function capitalize(string){
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
-
-    //---------------- only make ipsom when told
-    $('#submit').on('click', function(){
-    $('#text_area > div').remove();
-    make_ipsom();
-    })
-});
+  
+}

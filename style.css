@@ -62,7 +62,7 @@ table {
 }
 
 .parallax{
-    background: url('pokemon_top.png') no-repeat center;
+    background: url('assets/pokemon_top.png') no-repeat center;
     background-size:cover;
     background-attachment: fixed;
     height: 500px;
@@ -81,7 +81,7 @@ table {
     display:inline-block;
     width:300px;
     height:150px;
-    background: url('logo.png') no-repeat center;
+    background: url('assets/logo.png') no-repeat center;
     background-size: contain;
     transform: rotate(-10deg);
 }
